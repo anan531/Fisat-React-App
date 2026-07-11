@@ -6,6 +6,7 @@ import './App.css'
 import AddStudent from './components/AddStudent'
 import SearchStud from './components/SearchStud'
 import DelStudent from './components/DelStudent'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ViewStud from './components/ViewStud'
 
 function App() {
@@ -13,10 +14,16 @@ function App() {
 
   return (
     <>
-      <AddStudent/>
-      <SearchStud/>
-      <DelStudent/>
-      <ViewStud/>
+  <BrowserRouter>
+  <Routes>
+<Route path="/" element={<AddStudent/>}/>
+<Route path="/search" element={<SearchStud/>}/>
+<Route path="/del" element={<DelStudent/>}/>
+<Route path="/view" element={<ViewStud/>}/>
+
+  </Routes>
+  
+  </BrowserRouter>
     </>
   )
 }
